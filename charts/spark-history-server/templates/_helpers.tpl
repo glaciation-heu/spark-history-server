@@ -53,9 +53,9 @@ app.kubernetes.io/instance: {{ .Release.Name }}
 {{/*
 Create the name of the secret to use
 */}}
-{{- define "data-sanitization.secretName" -}}
+{{- define "spark-history-server.secretName" -}}
 {{- if .Values.secret.create }}
-{{- default (include "data-sanitization.fullname" .) .Values.secret.name }}
+{{- default (include "spark-history-server.fullname" .) .Values.secret.name }}
 {{- else }}
 {{- default "default" .Values.secret.name }}
 {{- end }}

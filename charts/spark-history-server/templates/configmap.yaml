@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: {{ include "spark-history-server.fullname" . }}-config
   labels:
-    {{- include "data-sanitization.labels" . | nindent 4 }}
+    {{- include "spark-history-server.labels" . | nindent 4 }}
 data:
   spark-defaults.conf: |-
     spark.hadoop.fs.s3a.endpoint=https://{{ .Values.s3.endpoint }}

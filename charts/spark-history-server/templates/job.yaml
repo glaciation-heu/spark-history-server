@@ -3,7 +3,7 @@ kind: Job
 metadata:
   name: create-sanitization-spark-events-bucket
   labels:
-    {{- include "data-sanitization.labels" . | nindent 4 }}
+    {{- include "spark-history-server.labels" . | nindent 4 }}
 spec:
   template:
     spec:
@@ -12,7 +12,7 @@ spec:
         image: quay.io/minio/minio:RELEASE.2024-03-15T01-07-19Z
         envFrom:
         - secretRef:
-            name: {{ include "data-sanitization.secretName" . }}
+            name: {{ include "spark-history-server.secretName" . }}
         command:
         - /bin/sh
         - -c

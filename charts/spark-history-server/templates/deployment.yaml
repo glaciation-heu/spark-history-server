@@ -37,7 +37,7 @@ spec:
               value: "false"
           envFrom:
             - secretRef:
-                name: {{ include "data-sanitization.secretName" . }}
+                name: {{ include "spark-history-server.secretName" . }}
           volumeMounts:
             - name: config
               mountPath: /opt/spark/conf/spark-defaults.conf
@@ -49,14 +49,14 @@ spec:
             - name: http
               containerPort: 18080
               protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /
-              port: http
-          readinessProbe:
-            httpGet:
-              path: /
-              port: http
+          # livenessProbe:
+          #   httpGet:
+          #     path: /
+          #     port: http
+          # readinessProbe:
+          #   httpGet:
+          #     path: /
+          #     port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       volumes:
