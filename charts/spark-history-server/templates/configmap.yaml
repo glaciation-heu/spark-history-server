@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "spark-history-server.fullname" . }}-config
+  labels:
+    {{- include "data-sanitization.labels" . | nindent 4 }}
+data:
+  spark-defaults.conf: |-
+    spark.hadoop.fs.s3a.endpoint=https://{{ .Values.s3.endpoint }}
+    spark.hadoop.fs.s3a.path.style.access=true
+    spark.hadoop.fs.s3a.attempts.maximum=1
+    spark.hadoop.fs.s3a.connection.establish.timeout=5000
+    spark.hadoop.fs.s3a.connection.timeout=10000
+    spark.history.fs.logDirectory=s3a://{{ .Values.s3.bucket }}
