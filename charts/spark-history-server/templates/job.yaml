@@ -17,7 +17,7 @@ spec:
         - /bin/sh
         - -c
         - |
-          set -x;  # enable printing the command before execution (in the sub-shell)
+          set -ex;  # enable printing the command before execution (in the sub-shell)
           mc alias set minio https://{{ .Values.s3.endpoint }} $AWS_ACCESS_KEY_ID $AWS_SECRET_ACCESS_KEY;
           mc mb minio/{{ .Values.s3.bucket }}
         securityContext:
