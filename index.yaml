@@ -3,6 +3,15 @@ entries:
   spark-history-server:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2024-11-28T20:33:54.035556324Z"
+    description: A Helm chart for Spark History Server in Kubernetes
+    digest: 1222342e0942c8cb79a3a064126cb616ef97dd0d61b6f4c60598ffd51b536942
+    name: spark-history-server
+    urls:
+    - https://github.com/glaciation-heu/spark-history-server/releases/download/spark-history-server-1.0.4/spark-history-server-1.0.4.tgz
+    version: 1.0.4
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2024-07-19T11:58:33.787747982Z"
     description: A Helm chart for Spark History Server in Kubernetes
     digest: 4e1542355dcc54ff26983ca6dc3269a5c47542065a17d7c60c159d7ae09d7a53
@@ -37,4 +46,4 @@ entries:
     urls:
     - https://github.com/glaciation-heu/spark-history-server/releases/download/spark-history-server-1.0.0/spark-history-server-1.0.0.tgz
     version: 1.0.0
-generated: "2024-07-19T11:58:33.787761968Z"
+generated: "2024-11-28T20:33:54.035580679Z"
